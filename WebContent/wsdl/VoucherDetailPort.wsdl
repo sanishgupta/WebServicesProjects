@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://dev.com/voucherdetail" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="VoucherDetail" targetNamespace="http://dev.com/voucherdetail">
+
+	<types>
+		<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://dev.com/voucherdetail">
+
+			<element name="getVoucherDetail_INTO" type="tns:GetVoucherDetail_INTO"/>
+			<element name="voucherDetail_TO" type="tns:VoucherDetail_TO"/>
+			<element name="voucherDetailFault" type="tns:VoucherDetailFault"/>
+			<!-- <element name="securityToken" type="tns:SecurityToken" /> -->
+			
+			
+			<!-- Request : Maping -->
+			
+			<complexType name="GetVoucherDetail_INTO">
+				<sequence>
+					<element name="operationName" type="xsd:string"/>
+					<element name="voucherNumber" type="xsd:string"/>
+				</sequence>
+			</complexType>
+
+			<!-- Response : Maping -->
+			<complexType name="VoucherDetail_TO">
+				<sequence>
+				 <!-- OperationName's : VOUCHER_NUMBER, VOUCHER_UPDATE -->
+					<element name="operationName" type="xsd:string"/>
+					<element name="voucherNumber" type="xsd:string"/>
+					<element name="voucherStatus" type="xsd:string"/>
+					<element name="message" type="xsd:string"/>
+				</sequence>
+			</complexType>
+
+			<!-- Commenting "SecurityToken"  part since not in  use 
+			<complexType name="SecurityToken">
+				<sequence>
+					<element name="token" type="xsd:string" />
+					<element name="validTill" type="xsd:date" />
+				</sequence>
+			</complexType>
+			-->
+			<complexType name="VoucherDetailFault">
+				<sequence>
+					<element name="faultInfo" type="xsd:string"/>
+					<element name="message" type="xsd:string"/>
+				</sequence>
+			</complexType>
+			
+		</xsd:schema>
+	</types>
+	
+	<!--  messages format -->
+	<message name="voucherDetailRequest">
+		<part element="tns:getVoucherDetail_INTO" name="parameters"/>
+		<!-- <part name="request_header" element="tns:securityToken"/> -->
+	</message>
+	<message name="voucherDetailResponse">
+		<part element="tns:voucherDetail_TO" name="parameters"/>
+	</message>
+	<message name="voucherDetailFault">
+		<part element="tns:voucherDetailFault" name="faultInfo"/>
+	</message>
+
+	<!-- define getVoucherDetail operation here -->	
+	<portType name="VoucherDetailPortType">
+		<operation name="getVoucherDetail">
+			<input message="tns:voucherDetailRequest"/>
+			<output message="tns:voucherDetailResponse"/>
+			<fault message="tns:voucherDetailFault" name="voucherDetailFault"/>
+		</operation>
+	</portType>
+	
+	<!-- bind the operations -->
+	<binding name="VoucherDetailBinding" type="tns:VoucherDetailPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getVoucherDetail">
+			<soap:operation soapAction="getVoucherDetail"/>
+			<input>
+				<soap:body parts="parameters" use="literal"/>
+				<!-- <soap:header use="literal" part="request_header" message="tns:voucherDetailRequest"> </soap:header>--> 
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="voucherDetailFault">
+				<soap:fault name="voucherDetailFault" use="literal"/>
+			</fault>
+		</operation>
+	</binding>
+	
+	<!-- name and location of the service -->
+	<service name="VoucherDetailService">
+		<port binding="tns:VoucherDetailBinding" name="VoucherDetailPort">
+			<soap:address location="http://localhost:8881/voucher/services/VoucherDetailPort"/>
+		</port>
+	</service>
+</definitions>

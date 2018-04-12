@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.ionicframework.com/1.0.0/css/ionic.css" />
+	<script src="http://code.ionicframework.com/1.0.0/js/ionic.bundle.js"></script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<menu id="12345678" label="My menu">
+	<menuitem type="command" label="Item 0"/>
+	<menuitem type="command" label="Item 1"/>
+	<menuitem type="command" label="Item 2"/>
+</menu>
+<ion-nav-bar delegate-handle="hhh" align-title="center" animation="slide-in-right" class="bar-energized">
+	<ion-nav-back-button class="button-clear">
+		<i class="ion-arrow-left-c">Back</i>
+	</ion-nav-back-button>
+	<!-- Initial content -->
+</ion-nav-bar>
+<ion-nav-view>
+	<!-- Initial content. -->
+</ion-nav-view>
+</head>
+<ion-refresher/>
+<body>
+Hello IG !!!
+<ion-refresher on-refresh="yes" on-pulling="yes" pulling-icon="ion-alert" refreshing-icon="ion-alert" refreshing-text="Refresh"/>
+</body>
+</html>

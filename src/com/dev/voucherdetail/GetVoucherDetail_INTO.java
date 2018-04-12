@@ -1,0 +1,155 @@
+/**
+ * GetVoucherDetail_INTO.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
+package com.dev.voucherdetail;
+
+public class GetVoucherDetail_INTO  implements java.io.Serializable {
+    private java.lang.String operationName;
+
+    private java.lang.String voucherNumber;
+
+    public GetVoucherDetail_INTO() {
+    }
+
+    public GetVoucherDetail_INTO(
+           java.lang.String operationName,
+           java.lang.String voucherNumber) {
+           this.operationName = operationName;
+           this.voucherNumber = voucherNumber;
+    }
+
+
+    /**
+     * Gets the operationName value for this GetVoucherDetail_INTO.
+     * 
+     * @return operationName
+     */
+    public java.lang.String getOperationName() {
+        return operationName;
+    }
+
+
+    /**
+     * Sets the operationName value for this GetVoucherDetail_INTO.
+     * 
+     * @param operationName
+     */
+    public void setOperationName(java.lang.String operationName) {
+        this.operationName = operationName;
+    }
+
+
+    /**
+     * Gets the voucherNumber value for this GetVoucherDetail_INTO.
+     * 
+     * @return voucherNumber
+     */
+    public java.lang.String getVoucherNumber() {
+        return voucherNumber;
+    }
+
+
+    /**
+     * Sets the voucherNumber value for this GetVoucherDetail_INTO.
+     * 
+     * @param voucherNumber
+     */
+    public void setVoucherNumber(java.lang.String voucherNumber) {
+        this.voucherNumber = voucherNumber;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof GetVoucherDetail_INTO)) return false;
+        GetVoucherDetail_INTO other = (GetVoucherDetail_INTO) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = true && 
+            ((this.operationName==null && other.getOperationName()==null) || 
+             (this.operationName!=null &&
+              this.operationName.equals(other.getOperationName()))) &&
+            ((this.voucherNumber==null && other.getVoucherNumber()==null) || 
+             (this.voucherNumber!=null &&
+              this.voucherNumber.equals(other.getVoucherNumber())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = 1;
+        if (getOperationName() != null) {
+            _hashCode += getOperationName().hashCode();
+        }
+        if (getVoucherNumber() != null) {
+            _hashCode += getVoucherNumber().hashCode();
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(GetVoucherDetail_INTO.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://dev.com/voucherdetail", "GetVoucherDetail_INTO"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("operationName");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://dev.com/voucherdetail", "operationName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("voucherNumber");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://dev.com/voucherdetail", "voucherNumber"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+}
