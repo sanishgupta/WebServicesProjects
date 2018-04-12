@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GDMS Web Service
+	</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+			<s:element name="HelloWorld_Alias">
+				<s:complexType/>
+			</s:element>
+			<s:element name="HelloWorld_AliasResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="HelloWorld_AliasResult" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="DeliveryAvailabilityCheckForDate">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="1" name="expdel" type="s:boolean"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strConceptCode" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strTerrID" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="dt" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strArea" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strDelyType" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="DeliveryAvailabilityCheckForDateResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="DeliveryAvailabilityCheckForDateResult" type="tns:ResponseAttribute"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="ResponseAttribute">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="0" name="DataCaptureResponse" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="DeliveryDateCheckResponse" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ConnectionResponse" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="DeliveryDate" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="DeliverySlot" type="s:string"/>
+					<s:element maxOccurs="1" minOccurs="0" name="ErrorMessage" type="s:string"/>
+				</s:sequence>
+			</s:complexType>
+			<s:element name="CaptureScheduleReservationDataFromORPOS">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="strTranId" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strConceptCode" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strTerritoryID" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strStoreOrposCode" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strDelyType" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strDelyDate" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strDelySlot" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strDelyCountry" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strDelyState" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strDelyArea" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="iInvItemCount" type="s:int"/>
+						<s:element maxOccurs="1" minOccurs="1" name="dInvValue" type="s:decimal"/>
+						<s:element maxOccurs="1" minOccurs="1" name="dInvVolume" type="s:decimal"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strReservationDateTime" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strReservationExpiryDatetime" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strSchReserveFlag" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strDelyWHSourceCode" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strSalesmanHRMSID" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strCashierId" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="1" name="bManagerOverwriteFlag" type="s:boolean"/>
+						<s:element maxOccurs="1" minOccurs="1" name="iExpDel" type="s:int"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strDataSource" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strCustRefNo" type="s:string"/>
+						<s:element maxOccurs="1" minOccurs="0" name="strCustMob" type="s:string"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="CaptureScheduleReservationDataFromORPOSResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="CaptureScheduleReservationDataFromORPOSResult" type="tns:ResponseAttribute"/>
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+		</s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorld_AliasSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld_Alias">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeliveryAvailabilityCheckForDateSoapIn">
+    <wsdl:part name="parameters" element="tns:DeliveryAvailabilityCheckForDate">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeliveryAvailabilityCheckForDateSoapOut">
+    <wsdl:part name="parameters" element="tns:DeliveryAvailabilityCheckForDateResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CaptureScheduleReservationDataFromORPOSSoapIn">
+    <wsdl:part name="parameters" element="tns:CaptureScheduleReservationDataFromORPOS">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="HelloWorld_AliasSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorld_AliasResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CaptureScheduleReservationDataFromORPOSSoapOut">
+    <wsdl:part name="parameters" element="tns:CaptureScheduleReservationDataFromORPOSResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="GDMSSoap">
+    <wsdl:operation name="HelloWorld">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Default function to
+				test web service</wsdl:documentation>
+      <wsdl:input name="HelloWorld_Alias" message="tns:HelloWorld_AliasSoapIn">
+    </wsdl:input>
+      <wsdl:output name="HelloWorld_Alias" message="tns:HelloWorld_AliasSoapOut">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeliveryCheckForGivenDate">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+				Function to get area and date wise delivery date confirmation
+			</wsdl:documentation>
+      <wsdl:input name="DeliveryAvailabilityCheckForDate" message="tns:DeliveryAvailabilityCheckForDateSoapIn">
+    </wsdl:input>
+      <wsdl:output name="DeliveryAvailabilityCheckForDate" message="tns:DeliveryAvailabilityCheckForDateSoapOut">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSchReservationData">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+				Function to capture POS data for schedule reservation
+			</wsdl:documentation>
+      <wsdl:input name="CaptureScheduleReservationDataFromORPOS" message="tns:CaptureScheduleReservationDataFromORPOSSoapIn">
+    </wsdl:input>
+      <wsdl:output name="CaptureScheduleReservationDataFromORPOS" message="tns:CaptureScheduleReservationDataFromORPOSSoapOut">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GDMSSoap" type="tns:GDMSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld_Alias" style="document"/>
+      <wsdl:input name="HelloWorld_Alias">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="HelloWorld_Alias">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeliveryCheckForGivenDate">
+      <soap:operation soapAction="http://tempuri.org/DeliveryAvailabilityCheckForDate" style="document"/>
+      <wsdl:input name="DeliveryAvailabilityCheckForDate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeliveryAvailabilityCheckForDate">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSchReservationData">
+      <soap:operation soapAction="http://tempuri.org/CaptureScheduleReservationDataFromORPOS" style="document"/>
+      <wsdl:input name="CaptureScheduleReservationDataFromORPOS">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CaptureScheduleReservationDataFromORPOS">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GDMSSoap12" type="tns:GDMSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld_Alias" style="document"/>
+      <wsdl:input name="HelloWorld_Alias">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="HelloWorld_Alias">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeliveryCheckForGivenDate">
+      <soap12:operation soapAction="http://tempuri.org/DeliveryAvailabilityCheckForDate" style="document"/>
+      <wsdl:input name="DeliveryAvailabilityCheckForDate">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DeliveryAvailabilityCheckForDate">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CaptureSchReservationData">
+      <soap12:operation soapAction="http://tempuri.org/CaptureScheduleReservationDataFromORPOS" style="document"/>
+      <wsdl:input name="CaptureScheduleReservationDataFromORPOS">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CaptureScheduleReservationDataFromORPOS">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GDMS">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GDMS Web Service
+		</wsdl:documentation>
+    <wsdl:port name="GDMSSoap" binding="tns:GDMSSoap">
+      <soap:address location="http://localhost:8881/GDMSMockUpWebService/services/GDMSSoap"/>
+    </wsdl:port>
+    <wsdl:port name="GDMSSoap12" binding="tns:GDMSSoap12">
+      <soap12:address location="http://192.168.19.31/gdmswebservice/Service1.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
